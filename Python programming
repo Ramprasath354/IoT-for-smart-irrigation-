@@ -1,0 +1,33 @@
+python import time
+
+import random import
+
+requests
+
+# Simulating sensor data def read_soil_moisture_sensor():
+
+# Simulating sensor reading (0-100, where 0 is dry and 100 is wet) return random.randint(0, 100)
+
+# IoT platform endpoint iot_platform_endpoint = "https://your-iot-platform-api-endpoint.com"
+
+# Main program
+
+def smart_irrigation_system(): try: while True:
+
+# Read soil moisture level from the sensor soil_moisture_level = read_soil_moisture_sensor()
+
+# Send data to the IoT platform payload = {"moisture_level": soil_moisture_level} response = requests.post(f"{iot_platform_endpoint}/send_data", json=payload)
+
+# Check if the data was sent successfully if response.status_code == 200:
+
+print(f"Data sent successfully: {payload}")
+
+else: print(f"Failed to send data. Status code: {response.status_code}")
+
+# Sleep for a predefined interval (e.g., 1 hour)
+
+time.sleep(3600)
+
+except KeyboardInterrupt: print("Program terminated by user.")
+
+if __name__ == "__main__": smart_irrigation_system()
